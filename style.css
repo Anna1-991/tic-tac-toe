@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(8, 8, 8);
+
+}
+
+:root {
+    --main-padding: 12px;
+    --border-radius: 12px;
+    --font-color: #db3eb1;
+}
+
+.neonText {
+    color: var(--font-color);
+    filter: drop-shadow(0 0 20px #db3eb1) contrast(2) brightness(2);
+}
+
+.container,
+.play_board,
+.result_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+}
+
+.container {
+    padding: 25px 30px 25px;
+    border-radius: 12px;
+}
+
+.container.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.container header {
+    font-size: 32px;
+    color: var(--font-color);
+    padding-bottom: 12px;
+    border-bottom: 1px solid #db3eb1;
+}
+
+.title {
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+.options {
+    display: flex;
+    width: 100%;
+}
+
+.options button {
+    width: 100%;
+    font-size: 20px;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+    color: var(--font-color);
+    background-color: rgb(8, 8, 8);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.options button:hover,
+.btn button:hover {
+    color: rgb(8, 8, 8);
+    background-color: #db3eb1;
+    filter: drop-shadow(0 0 20px #e12db1) brightness(2);
+    transform: scale(0.90);
+}
+
+.options button.playerX {
+    margin-right: 10px;
+}
+
+.options button.playerO {
+    margin-left: 10px;
+}
+
+/* playbord section  */
+.play_board .details {
+    background: rgb(8, 8, 8);
+    padding: var(--main-padding);
+    border-radius: var(--border-radius);
+}
+
+.play_board {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.play_board.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.play_board .details .players {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.details span {
+    width: 100%;
+    padding: var(--main-padding) 0;
+    border-radius: var(--border-radius);
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    transition: all 0.5s ease;
+}
+
+.details span:first-child {
+    color: #21ebff;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    border: 1px solid #21ebff;
+    color: #21ebff;
+    box-shadow: 0 0 5px #21ebff, 0 0 5px #21ebff inset;
+    border-radius: var(--border-radius);
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+
+.players.active span:first-child {
+    color: black;
+}
+
+.players.active span:nth-child(2) {
+    color: #21ebff;
+}
+
+.players.active .slider {
+    left: 50%;
+}
+
+.play_board section {
+    display: flex;
+}
+
+.play_area {
+    margin-top: 20px;
+}
+
+.play_area section span {
+    display: block;
+    margin: 4px;
+    height: 80px;
+    width: 80px;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+    color: rgb(135, 21, 21);
+}
+
+/* result box */
+
+.result_box {
+    background: #fff;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    max-width: 350px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.result_box .win_text {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.win_text p {
+    margin: 0 5px;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn button {
+    width: 100%;
+    font-size: 20px;
+    color: var(--font-color);
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    background-color: rgb(136, 169, 136);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
