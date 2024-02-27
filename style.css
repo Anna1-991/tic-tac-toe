@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: rgb(8, 8, 8);
+    background-color: black;
 
 }
 
@@ -74,8 +74,7 @@ body {
     transition: all 0.5s ease;
 }
 
-.options button:hover,
-.btn button:hover {
+.options button:hover{
     color: rgb(8, 8, 8);
     background-color: #db3eb1;
     filter: drop-shadow(0 0 20px #e12db1) brightness(2);
@@ -163,6 +162,9 @@ body {
 
 .play_area {
     margin-top: 20px;
+    display: grid;
+    grid-template-rows: 80px;
+    grid-template-columns: 240px;
 }
 
 .play_area section span {
@@ -170,19 +172,47 @@ body {
     margin: 4px;
     height: 80px;
     width: 80px;
-    background: #fff;
+    background: black;
     border-radius: 8px;
     font-size: 40px;
     text-align: center;
     line-height: 80px;
-    color: rgb(135, 21, 21);
+    color: #21ebff;
+}
+
+.neon_Y {
+    color: #21ebff;
+    filter: drop-shadow(0 0 3px #21ebff) brightness(2);
+    text-shadow: 0 0 120px #21ebff, 0 0 80px #21ebff, 0 0 50px #21ebff;
+}
+
+.neon_X {
+    color: #db3eb1;
+    filter: drop-shadow(0 2px 3px #e12db1) brightness(2);
+    text-shadow: 0 0 120px #e12db1, 0 0 80px #e12db1, 0 0 50px #e12db1;
+}
+
+.line{
+    width: 3px;
+    height: 250px;
+    background: #e8e80f;
+    box-shadow: 0 0 5px #e8e80f, 0 0 5px #e8e80f inset;
+}
+
+.line_2{
+    width: 250px;
+    height: 3px;
+    background: #e8e80f;
+    box-shadow: 0 0 5px #e8e80f, 0 0 5px #e8e80f inset;
 }
 
 /* result box */
 
 .result_box {
-    background: #fff;
+    background: black;
     padding: 20px;
+    border:  1px solid #db3eb1;
+    filter: drop-shadow(0 0 20px #e12db1) brightness(2);
     border-radius: var(--border-radius);
     max-width: 350px;
     width: 100%;
@@ -197,10 +227,12 @@ body {
     transform: translate(-50%, -50%) scale(1);
 }
 
-.result_box .win_text {
+.win_text {
+    color: #21ebff;
     font-size: 25px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .win_text p {
@@ -209,21 +241,23 @@ body {
     font-size: 30px;
 }
 
-.btn {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.btn button {
+.btn  button{
     width: 100%;
     font-size: 20px;
-    color: var(--font-color);
+    color: #21ebff;
     padding: 12px 20px;
     border: none;
     outline: none;
-    background-color: rgb(136, 169, 136);
+    background-color: black;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.5s ease;
+}
+
+.btn button:hover {
+    color: black;
+    background: #21ebff;
+    box-shadow: 0 0 5px #21ebff, 0 0 5px #21ebff inset;
+    filter: drop-shadow(0 0 20px #21ebff) ;
+    transform: scale(0.90);
 }
